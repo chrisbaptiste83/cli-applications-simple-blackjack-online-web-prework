@@ -3,10 +3,11 @@ def welcome
 end
 
 def deal_card
-card = rand(1..11)
+card = rand(1..11) 
+card 
 end
 
-def display_card_total
+def display_card_total(card_total)
   puts "Your cards add up to #{card_total}"
 end
 
@@ -18,7 +19,7 @@ def get_user_input
   user_input = gets.chomp
 end
 
-def end_game
+def end_game(card_total)
   puts "Sorry, you hit #{card_total}. Thanks for playing!"
 end
 
@@ -30,7 +31,7 @@ def initial_round
   return card_total 
 end
 
-def hit?
+def hit?(card_total)
   prompt_user #ask the user if they want to hit or stay
   user_input = get_user_input 
   if user_input == "h"
@@ -45,9 +46,7 @@ end
 
 def invalid_command
    puts "Please enter a valid command"
-  prompt_user
-  get_user_input
-end
+  end 
 
 #####################################################
 # get every test to pass before coding runner below #
@@ -64,5 +63,5 @@ def runner
   end_game(card_total) 
 end
 
-runner 
-    
+runner
+
